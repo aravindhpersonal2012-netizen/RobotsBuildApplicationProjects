@@ -7,8 +7,7 @@ def main():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-    # 2. Define HSV ranges and display colors for target detection
-    # Format: "Color Name": (Lower HSV, Upper HSV, BGR Overlay Color)
+    
     COLOR_RANGES = {
         "ORANGE": (np.array([5, 150, 150]), np.array([25, 255, 255]), (0, 165, 255)),
         "YELLOW": (np.array([20, 100, 100]), np.array([35, 255, 255]), (0, 255, 255)),
@@ -66,8 +65,7 @@ def main():
             cv2.rectangle(frame, (x, y), (x + w, y + h), box_color, 3)
             cv2.circle(frame, (x + w // 2, y + h // 2), 6, (0, 0, 255), -1)
 
-            # --- LARGE ON-SCREEN DISPLAY (NO SMALL TERMINAL TEXT) ---
-            # Top banner box
+        
             cv2.rectangle(frame, (0, 0), (640, 70), (20, 20, 20), -1)
             
             # Big color name text
@@ -93,5 +91,5 @@ def main():
     cap.release()
     cv2.destroyAllWindows()
 
-if __name__ == "__main__":
+if name == "main":
     main()
